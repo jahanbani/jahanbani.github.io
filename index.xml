@@ -29,5 +29,16 @@ The following command will do the job:
 :g/\v(Q[A-Z]?\d{3})(.\*)/s/\1//g  </description>
     </item>
     
+    <item>
+      <title></title>
+      <link>/posts/gams030820/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/gams030820/</guid>
+      <description>x&amp;mdash; title: &amp;ldquo;Copying regex groups in (neo)Vim&amp;rdquo; date: 2020-08-01T21:38:30-04:00 draft: false
+ Reading and writing GAMS GDX files in Python I wanted to read and write GDX files in Python on Linux using gdx-pandas. However, I was getting segmentation fault. With the latest GAMS (32.1), I can do the following without the need of any third-party tools. import os import pandas as pd import sys
+import gamstransfer as gtimport ipdbfrom gams import GamsJob, GamsWorkspaceserver = 0if server:gamsdir = r&amp;quot;/usr/local/gams/gams30.</description>
+    </item>
+    
   </channel>
 </rss>
