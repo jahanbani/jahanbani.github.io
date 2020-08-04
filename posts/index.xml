@@ -21,7 +21,8 @@ Q555UXX
 Q233
 And we want to extract the following:
 Q120
-Q555 Q233
+Q555
+Q233
 The following command will do the job:
 :g/\v(Q[A-Z]?\d{3})(.\*)/s/\1//g  </description>
 			<content type="html"><![CDATA[<p>Imagine having the following text:</p>
@@ -30,7 +31,7 @@ Q555UXX<br>
 Q233</p>
 <p>And we want to extract the following:</p>
 <p>Q120<br>
-Q555
+Q555<br>
 Q233</p>
 <p>The following command will do the job:</p>
 <pre><code>:g/\v(Q[A-Z]?\d{3})(.\*)/s/\1//g
