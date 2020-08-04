@@ -38,65 +38,5 @@ Q233</p>
 ]]></content>
 		</item>
 		
-		<item>
-			<title></title>
-			<link>/posts/gams030820/</link>
-			<pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-			
-			<guid>/posts/gams030820/</guid>
-			<description>x&amp;mdash; title: &amp;ldquo;Reading and Wrting GAMS GDX files&amp;rdquo; date: 2020-08-01T21:38:30-04:00 draft: false
- Reading and writing GAMS GDX files in Python I wanted to read and write GDX files in Python on Linux using gdx-pandas. However, I was getting segmentation fault. With the latest GAMS (32.1), I can do the following without the need of any third-party tools. import os import pandas as pd import sys
-import gamstransfer as gtimport ipdbfrom gams import GamsJob, GamsWorkspaceserver = 0if server:gamsdir = r&amp;quot;/usr/local/gams/gams30.</description>
-			<content type="html"><![CDATA[<p>x&mdash;
-title: &ldquo;Reading and Wrting GAMS GDX files&rdquo;
-date: 2020-08-01T21:38:30-04:00
-draft: false</p>
-<hr>
-<h1 id="reading-and-writing-gams-gdx-files-in-python">Reading and writing GAMS GDX files in Python</h1>
-<p>I wanted to read and write GDX files in Python on Linux using <code>gdx-pandas</code>. However, I was getting segmentation fault. With the latest GAMS (32.1), I can do the following without the need of any third-party tools.
-import os
-import pandas as pd
-import sys</p>
-<pre><code>import gamstransfer as gt
-import ipdb
-from gams import GamsJob, GamsWorkspace
-
-server = 0
-if server:
-    gamsdir = r&quot;/usr/local/gams/gams30.1_linux_x64_64_sfx&quot;
-else:
-    gamsdir = r&quot;C:\GAMS\32&quot;
-
-ws = GamsWorkspace()
-
-
-def read_gdx(gdxfile):
-    gdx = gt.GdxContainer(gamsdir, gdxfile)
-    # load all gdx data
-    gdx.rgdx()
-    # create new data dictionary
-    data = gdx.to_dict(fields=[&quot;L&quot;, &quot;M&quot;, &quot;LO&quot;, &quot;UP&quot;, &quot;SCALE&quot;])
-    # remove the &quot;*&quot; symbol from the data dictionary
-    # del data[&quot;*&quot;]
-
-    # validate
-    # gdx.validate(data)
-
-    # create empty gdx container
-    # new_gdx = gt.GdxContainer(ws.system_directory)
-
-    # add data to the new_gdx
-    # new_gdx.add_to_gdx(data, standardize_data=True, inplace=True)
-    # new_gdx.write_gdx(&quot;transport_out.gdx&quot;, compress=False)
-    return data
-
-
-data =read_gdx('ramp.gdx')
-
-ipdb.set_trace()  # XXX
-</code></pre>
-]]></content>
-		</item>
-		
 	</channel>
 </rss>
